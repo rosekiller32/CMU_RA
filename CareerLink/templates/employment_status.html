@@ -427,7 +427,8 @@
 
             </select>
         </p>
-        <input type="hidden" name="userid" value="{{ request.user.id }}" required="required" class="charfield required" id="id_userid" /><input type="hidden" name="username" value="{{ request.user.username }}" required="required" class="charfield required" id="id_username" /></p>
+        <input type="hidden" name="userid" value="{{ request.user.id }}" required="required" class="charfield required" id="id_userid" />
+        <input type="hidden" name="username" value="{{ request.user.username }}" required="required" class="charfield required" id="id_username" /></p>
         <div style="clear:left;">&nbsp;</div>
         <input type="submit" value="Submit">
         {% csrf_token %}
