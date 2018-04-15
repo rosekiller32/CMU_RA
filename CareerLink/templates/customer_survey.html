@@ -1,0 +1,500 @@
+{% extends "applicationBase.html" %} {% block content %}
+
+<head>
+    <meta charset="utf-8">
+    <title>New Customer Survey</title>
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            padding: 1em 2em;
+            color: black;
+        }
+
+        p {
+            width: 50em;
+            clear: both;
+        }
+
+        label {
+            font-size: 20px;
+            font-family: 'Raleway', sans-serif;
+            display: block;
+            float: left;
+            margin: 0 1.2em 1.2em 0;
+            color: black;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        li label {
+            width: auto;
+            cursor: pointer;
+        }
+
+        .errorlist {
+            color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>New Customer Survey</h1>
+
+    <p>Please complete this form to help us determine how we can assist you.
+        <br> All information provided is confidential and used strictly for programs and services in this office.
+        <br> This form does NOT enroll you. You must register online to access all services.</p>
+
+
+
+    <form action="/forms/new-customer-survey/" method="post">
+        <input type='hidden' name='csrfmiddlewaretoken' value='vcX8vBBzXux82mZlvJtdCIWw2SR6c945Dh5XOwIaBTbrEFUdKxJOjG8umV6rMIJP'
+        />
+        <p>
+            <label for="id_name">1. Name:</label>
+            <input type="text" name="name" id="id_name" required class="charfield required" maxlength="2000" />
+        </p>
+        <p>
+            <label for="id_social_security">2. Social Security #:</label>
+            <input type="number" name="social_security" required class="floatfield required" id="id_social_security" />
+        </p>
+        <p>
+            <label for="id_address">3. Address:</label>
+            <input type="text" name="address" id="id_address" required class="charfield required" maxlength="2000" />
+        </p>
+        <p>
+            <label for="id_city">4. City:</label>
+            <input type="text" name="city" id="id_city" required class="charfield required" maxlength="2000" />
+        </p>
+        <p>
+            <label for="id_state">5. State:</label>
+            <input type="text" name="state" id="id_state" required class="charfield required" maxlength="2000" />
+        </p>
+        <p>
+            <label for="id_zip">6. Zip:</label>
+            <input type="number" name="zip" required class="floatfield required" id="id_zip" />
+        </p>
+        <p>
+            <label for="id_county">7. County:</label>
+            <input type="text" name="county" id="id_county" required class="charfield required" maxlength="2000" />
+        </p>
+        <p>
+            <label for="id_phone">8. Phone #:</label>
+            <input type="number" name="phone" required class="floatfield required" id="id_phone" />
+        </p>
+        <p>
+            <label for="id_email_address">9. Email Address:</label>
+            <input type="email" name="email_address" required class="emailfield required" id="id_email_address" />
+        </p>
+        <p>
+            <label for="id_date_of_birth">10. Date of Birth:</label>
+            <input type="date" name="date_of_birth" required class="datefield required" id="id_date_of_birth" />
+        </p>
+        <p>
+            <label for="id_are_you_registered_in_jobgatewayr_0">11. Are you registered in JobGateway®?</label>
+            <ul id="id_are_you_registered_in_jobgatewayr" class="choicefield required">
+                <li>
+                    <label for="id_are_you_registered_in_jobgatewayr_0">
+                        <input type="radio" name="are_you_registered_in_jobgatewayr" value="Yes" required class="choicefield required" id="id_are_you_registered_in_jobgatewayr_0"
+                        /> Yes
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_are_you_registered_in_jobgatewayr_1">
+                        <input type="radio" name="are_you_registered_in_jobgatewayr" value="No" required class="choicefield required" id="id_are_you_registered_in_jobgatewayr_1"
+                        /> No
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_gender_0">12.Gender:</label>
+            <ul id="id_gender" class="choicefield required">
+                <li>
+                    <label for="id_gender_0">
+                        <input type="radio" name="gender" value="Male" required class="choicefield required" id="id_gender_0" /> Male
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_gender_1">
+                        <input type="radio" name="gender" value="Female" required class="choicefield required" id="id_gender_1" /> Female
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_authorization_to_work_in_the_us">13. Authorization to Work in the US:</label>
+            <select name="authorization_to_work_in_the_us" required class="choicefield required" id="id_authorization_to_work_in_the_us">
+                <option value="" selected></option>
+
+                <option value="US Citizen">US Citizen</option>
+
+                <option value="Permanent Alien">Permanent Alien</option>
+
+                <option value="Temporary Alien">Temporary Alien</option>
+
+                <option value="Refugee">Refugee</option>
+
+                <option value="Other">Other</option>
+
+            </select>
+        </p>
+        <p>
+            <label for="id_your_current_employment_status">14. YOUR CURRENT EMPLOYMENT STATUS:</label>
+            <select name="your_current_employment_status" required class="choicefield required" id="id_your_current_employment_status">
+                <option value="" selected></option>
+
+                <option value="Employed Full‐time">Employed Full‐time</option>
+
+                <option value="Employed Part‐time">Employed Part‐time</option>
+
+                <option value="Temporary Layoff">Temporary Layoff</option>
+
+                <option value="Unemployed">Unemployed</option>
+
+            </select>
+        </p>
+        <p>
+            <label for="id_unemployment_compensation_uc">15. UNEMPLOYMENT COMPENSATION (UC):</label>
+            <select name="unemployment_compensation_uc" required class="choicefield required" id="id_unemployment_compensation_uc">
+                <option value="" selected></option>
+
+                <option value="Receiving UC Benefits">Receiving UC Benefits</option>
+
+                <option value="Exhausted UC Benefits">Exhausted UC Benefits</option>
+
+                <option value="Not Applicable">Not Applicable</option>
+
+            </select>
+        </p>
+        <p>
+            <label>16. I am here today for: (Check all that apply):</label>
+            <ul id="id_i_am_here_today_for_check_all_that_apply" class="multiplechoicefield required">
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_0">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="JobGateway® Registration" required="required"
+                            class="multiplechoicefield required" id="id_i_am_here_today_for_check_all_that_apply_0" /> JobGateway® Registration</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_1">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="UC – Filing for Benefits or Appeals" required="required"
+                            class="multiplechoicefield required" id="id_i_am_here_today_for_check_all_that_apply_1" /> UC – Filing for Benefits or Appeals</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_2">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="UC – Filing for Benefits or Appeals" required="required"
+                            class="multiplechoicefield required" id="id_i_am_here_today_for_check_all_that_apply_2" /> UC – Filing for Benefits or Appeals</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_3">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Veterans Services" required="required" class="multiplechoicefield required"
+                            id="id_i_am_here_today_for_check_all_that_apply_3" /> Veterans Services</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_4">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Calendar of Events" required="required" class="multiplechoicefield required"
+                            id="id_i_am_here_today_for_check_all_that_apply_4" /> Calendar of Events</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_5">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Calendar of Events" required="required" class="multiplechoicefield required"
+                            id="id_i_am_here_today_for_check_all_that_apply_5" /> Calendar of Events</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_6">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Labor Market Information" required="required"
+                            class="multiplechoicefield required" id="id_i_am_here_today_for_check_all_that_apply_6" /> Labor Market Information</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_7">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Resume Assistance" required="required" class="multiplechoicefield required"
+                            id="id_i_am_here_today_for_check_all_that_apply_7" /> Resume Assistance</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_8">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Job Search Planning/Career Counseling" required="required"
+                            class="multiplechoicefield required" id="id_i_am_here_today_for_check_all_that_apply_8" /> Job Search Planning/Career Counseling</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_9">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Networking" required="required" class="multiplechoicefield required"
+                            id="id_i_am_here_today_for_check_all_that_apply_9" /> Networking
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_10">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Interviewing" required="required" class="multiplechoicefield required"
+                            id="id_i_am_here_today_for_check_all_that_apply_10" /> Interviewing
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_11">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Identifying Skills" required="required" class="multiplechoicefield required"
+                            id="id_i_am_here_today_for_check_all_that_apply_11" /> Identifying Skills</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_12">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Civil Service/Government Jobs" required="required"
+                            class="multiplechoicefield required" id="id_i_am_here_today_for_check_all_that_apply_12" /> Civil Service/Government Jobs</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_13">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Job Search Websites" required="required" class="multiplechoicefield required"
+                            id="id_i_am_here_today_for_check_all_that_apply_13" /> Job Search Websites</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_14">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Supportive Services Information" required="required"
+                            class="multiplechoicefield required" id="id_i_am_here_today_for_check_all_that_apply_14" /> Supportive Services Information</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_15">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Disability Resources" required="required" class="multiplechoicefield required"
+                            id="id_i_am_here_today_for_check_all_that_apply_15" /> Disability Resources</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_16">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Tracking My Job Search" required="required"
+                            class="multiplechoicefield required" id="id_i_am_here_today_for_check_all_that_apply_16" /> Tracking My Job Search</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_17">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Job Search Basics/Show Me the Jobs" required="required"
+                            class="multiplechoicefield required" id="id_i_am_here_today_for_check_all_that_apply_17" /> Job Search Basics/Show Me the Jobs</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_18">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Starting a Business" required="required" class="multiplechoicefield required"
+                            id="id_i_am_here_today_for_check_all_that_apply_18" /> Starting a Business</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_19">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Basic Computer Skills (Mouse Keyboard etc.)"
+                            required="required" class="multiplechoicefield required" id="id_i_am_here_today_for_check_all_that_apply_19"
+                        /> Basic Computer Skills (Mouse Keyboard etc.)</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_20">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Computer Skills (MS Word Outlook etc.)" required="required"
+                            class="multiplechoicefield required" id="id_i_am_here_today_for_check_all_that_apply_20" /> Computer Skills (MS Word Outlook etc.)</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_21">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Re‐Entry Resources" required="required" class="multiplechoicefield required"
+                            id="id_i_am_here_today_for_check_all_that_apply_21" /> Re‐Entry Resources</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_22">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="English as a Second Language (ESL)" required="required"
+                            class="multiplechoicefield required" id="id_i_am_here_today_for_check_all_that_apply_22" /> English as a Second Language (ESL)</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_23">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Basic Reading/Writing/Math Skills" required="required"
+                            class="multiplechoicefield required" id="id_i_am_here_today_for_check_all_that_apply_23" /> Basic Reading/Writing/Math Skills</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_24">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Obtaining an Occupational Certification or License"
+                            required="required" class="multiplechoicefield required" id="id_i_am_here_today_for_check_all_that_apply_24"
+                        /> Obtaining an Occupational Certification or License</label>
+
+                </li>
+                <li>
+                    <label for="id_i_am_here_today_for_check_all_that_apply_25">
+                        <input type="checkbox" name="i_am_here_today_for_check_all_that_apply" value="Obtaining Your High School Equivalency Diploma"
+                            required="required" class="multiplechoicefield required" id="id_i_am_here_today_for_check_all_that_apply_25"
+                        /> Obtaining Your High School Equivalency Diploma</label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_how_did_you_hear_about_us">17. How did you hear about us?</label>
+            <input type="text" name="how_did_you_hear_about_us" id="id_how_did_you_hear_about_us" required class="charfield required"
+                maxlength="2000" />
+            <span class="helptext">(Example: Carnegie Library, CDC, Goodwill, etc.)</span>
+        </p>
+        <p>
+            <label>18. What type of information, programs or services would be most helpful to you? (Check all that apply):</label>
+            <ul id="id_what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply" class="multiplechoicefield required">
+                <li>
+                    <label for="id_what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply_0">
+                        <input type="checkbox" name="what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply"
+                            value="Job Search" required="required" class="multiplechoicefield required" id="id_what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply_0"
+                        /> Job Search</label>
+
+                </li>
+                <li>
+                    <label for="id_what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply_1">
+                        <input type="checkbox" name="what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply"
+                            value="Use Unemployment Compensation (UC) Phone" required="required" class="multiplechoicefield required"
+                            id="id_what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply_1"
+                        /> Use Unemployment Compensation (UC) Phone</label>
+
+                </li>
+                <li>
+                    <label for="id_what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply_2">
+                        <input type="checkbox" name="what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply"
+                            value="Registration for UC Compliance" required="required" class="multiplechoicefield required" id="id_what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply_2"
+                        /> Registration for UC Compliance</label>
+
+                </li>
+                <li>
+                    <label for="id_what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply_3">
+                        <input type="checkbox" name="what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply"
+                            value="On‐Site Recruitment" required="required" class="multiplechoicefield required" id="id_what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply_3"
+                        /> On‐Site Recruitment</label>
+
+                </li>
+                <li>
+                    <label for="id_what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply_4">
+                        <input type="checkbox" name="what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply"
+                            value="Orientation" required="required" class="multiplechoicefield required" id="id_what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply_4"
+                        /> Orientation
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply_5">
+                        <input type="checkbox" name="what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply"
+                            value="Workshop" required="required" class="multiplechoicefield required" id="id_what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply_5"
+                        /> Workshop
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply_6">
+                        <input type="checkbox" name="what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply"
+                            value="Other" required="required" class="multiplechoicefield required" id="id_what_type_of_information_programs_or_services_would_be_most_helpful_to_you_check_all_that_apply_6"
+                        /> Other
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_education_highest_gradediplomacollege_or_votech_classesdegree_completed">19. EDUCATION: Highest Grade/Diploma/College or VoTech Classes/Degree completed:</label>
+            <input type="text" name="education_highest_gradediplomacollege_or_votech_classesdegree_completed" id="id_education_highest_gradediplomacollege_or_votech_classesdegree_completed"
+                required class="charfield required" maxlength="2000" />
+        </p>
+        <p>
+            <label for="id_most_recent_employer">20. Most Recent Employer:</label>
+            <input type="text" name="most_recent_employer" id="id_most_recent_employer" class="charfield" maxlength="2000" />
+        </p>
+        <p>
+            <label for="id_most_recent_job_title">21. Most Recent Job Title:</label>
+            <input type="text" name="most_recent_job_title" id="id_most_recent_job_title" class="charfield" maxlength="2000" />
+        </p>
+        <p>
+            <label for="id_start_date">22. Start Date:</label>
+            <input type="date" name="start_date" class="datefield" id="id_start_date" />
+        </p>
+        <p>
+            <label for="id_end_date">23. End Date:</label>
+            <input type="date" name="end_date" class="datefield" id="id_end_date" />
+        </p>
+        <p>
+            <label for="id_wage_per_hour">24. Wage per Hour:</label>
+            <input type="number" name="wage_per_hour" class="floatfield" id="id_wage_per_hour" />
+        </p>
+        <p>
+            <label for="id_hours_per_week">25. Hours Per Week:</label>
+            <input type="number" name="hours_per_week" class="floatfield" id="id_hours_per_week" />
+        </p>
+        <p>
+            <label for="id_considered_to_be_of_hispanic_heritage_0">26. Considered to be of Hispanic Heritage:</label>
+            <ul id="id_considered_to_be_of_hispanic_heritage" class="choicefield required">
+                <li>
+                    <label for="id_considered_to_be_of_hispanic_heritage_0">
+                        <input type="radio" name="considered_to_be_of_hispanic_heritage" value="Yes" required class="choicefield required" id="id_considered_to_be_of_hispanic_heritage_0"
+                        /> Yes
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_considered_to_be_of_hispanic_heritage_1">
+                        <input type="radio" name="considered_to_be_of_hispanic_heritage" value="No" required class="choicefield required" id="id_considered_to_be_of_hispanic_heritage_1"
+                        /> No
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_race">27. Race:</label>
+            <select name="race" required class="choicefield required" id="id_race">
+                <option value="" selected></option>
+
+                <option value="American Indian/Alaskan Native">American Indian/Alaskan Native</option>
+
+                <option value="Asian">Asian</option>
+
+                <option value="Black/African American">Black/African American</option>
+
+                <option value="Hawaiian Native/other Pacific Islander">Hawaiian Native/other Pacific Islander</option>
+
+                <option value="White">White</option>
+
+                <option value="Do not Wish to Disclose">Do not Wish to Disclose</option>
+
+            </select>
+        </p>
+        <p>
+            <label for="id_males_18_or_older_only_are_you_registered_for_selective_service_0">28. Males 18 or older only: Are you registered for Selective Service?</label>
+            <ul id="id_males_18_or_older_only_are_you_registered_for_selective_service" class="choicefield required">
+                <li>
+                    <label for="id_males_18_or_older_only_are_you_registered_for_selective_service_0">
+                        <input type="radio" name="males_18_or_older_only_are_you_registered_for_selective_service" value="Yes" required class="choicefield required"
+                            id="id_males_18_or_older_only_are_you_registered_for_selective_service_0" /> Yes
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_males_18_or_older_only_are_you_registered_for_selective_service_1">
+                        <input type="radio" name="males_18_or_older_only_are_you_registered_for_selective_service" value="No" required class="choicefield required"
+                            id="id_males_18_or_older_only_are_you_registered_for_selective_service_1" /> No
+                    </label>
+
+                </li>
+            </ul>
+            <input type="hidden" name="userid" value="{{ request.user.id }}" required="required" class="charfield required" id="id_userid" />
+            <input type="hidden" name="username" value="{{ request.user.username }}" required="required" class="charfield required" id="id_username"/>
+        </p>
+        <div style="clear:left;">&nbsp;</div>
+        <input type="submit" value="Submit"> {% csrf_token %}
+    </form>
+
+</body>
+
+
+{% endblock %}

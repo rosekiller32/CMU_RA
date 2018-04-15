@@ -1,0 +1,17 @@
+{% extends "applicationBase.html" %} {% block content %}
+<form method="post" action="{% url 'application' %}">
+    <table class="apForm">
+        {% for field in form %}
+            <div class="fieldWrapper">
+                {{ field.errors }}
+                {{ field.label_tag }} {{ field }}
+                {% if field.help_text %}
+                <p class="help">{{ field.help_text|safe }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </table>
+    <input type="submit" class="log-btn" value="Save">
+    {% csrf_token %}
+</form>
+{% endblock %}

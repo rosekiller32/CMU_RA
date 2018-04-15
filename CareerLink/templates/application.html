@@ -1,0 +1,34 @@
+{% extends "applicationBase.html" %}
+{% block content %}
+<h1>Saved Applications</h1>
+<div id="container">
+    <div class="application">
+        <p class="info">
+                WIOA - Advanced Career Service Application</a>
+            <br>-{{Applications.creation_time}}</br>
+        </p>
+    </div>
+    <div class="application">
+        <p class="info">
+                WIOA - Advanced Career Service Application</a>
+            <br>-{{Applications.creation_time}}</br>
+        </p>
+    </div>
+    <div class="application">
+        <p class="info">
+                WIOA - Advanced Career Service Application</a>
+            <br>-{{Applications.creation_time}}</br>
+        </p>
+    </div>
+</div>
+<div>
+    <form method="GET" action="{% url 'create' %}">
+        <input type="submit" value="Creat New Application"> 
+        {% csrf_token %}
+    </form>
+    <form method="GET" action="{% url 'edit' %}">
+        <input type="submit" value="Edit Application"> 
+        {% csrf_token %}
+    </form>
+</div>
+{% endblock %}

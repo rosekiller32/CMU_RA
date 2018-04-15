@@ -1,0 +1,439 @@
+{% extends "applicationBase.html" %} {% block content %}
+
+<head>
+    <meta charset="utf-8">
+    <title>Employment/Education/Barriers to Employment Status</title>
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            padding: 1em 2em;
+            color: black;
+        }
+
+        p {
+            width: 50em;
+            clear: both;
+        }
+
+        label {
+            font-size: 20px;
+            font-family: 'Raleway', sans-serif;
+            display:block; 
+            float:left;
+            margin: 0 1.2em 1.2em 0;
+            color: black;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        li label {
+            width: auto;
+            cursor: pointer;
+        }
+
+        .errorlist {
+            color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Employment/Education/Barriers to Employment Status</h1>
+
+    <p>New legislation passed by Congress (The Workforce Innovation and Opportunity Act ‐ WIOA) requires American Job Centers
+        to identify the specific demographics of the populations we serve. </P>
+    <P>Please answer every question so we may credit you with the services you deserve.Your answers will be kept strictly confidential and within our system. 
+    <br>* Any multiple choice question left unanswered
+        will be entered as “No”</p>
+
+
+    <form action="/forms/employmenteducationbarriers-to-employment-status/" method="post">
+        <input type='hidden' name='csrfmiddlewaretoken' value='HjmYbgG6dZAsg680SiURc55ylYLlKF74vfQdJUPZKzLdrjvy6YmMwBZRIwPiJhO9'
+        />
+        <p>
+            <label for="id_do_you_have_a_disability">1. Do you have a disability?</label>
+            <select name="do_you_have_a_disability" required="required" class="choicefield required" id="id_do_you_have_a_disability">
+                <option value="Yes">Yes</option>
+
+                <option value="No" selected>No</option>
+
+                <option value="Do not wish to disclose">Do not wish to disclose</option>
+
+            </select>
+        </p>
+        <p>
+            <label for="id_if_yes_type">2. If yes, type:</label>
+            <input type="text" name="if_yes_type" id="id_if_yes_type" class="charfield" maxlength="2000" />
+        </p>
+        <p>
+            <label for="id_iep_0">3. IEP :</label>
+            <ul id="id_iep" class="choicefield required">
+                <li>
+                    <label for="id_iep_0">
+                        <input type="radio" name="iep" value="Yes" required class="choicefield required" id="id_iep_0" /> Yes
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_iep_1">
+                        <input type="radio" name="iep" value="No" required class="choicefield required" id="id_iep_1" /> No
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_504_plan_0">4. 504 Plan :</label>
+            <ul id="id_504_plan" class="choicefield required">
+                <li>
+                    <label for="id_504_plan_0">
+                        <input type="radio" name="504_plan" value="Yes" required class="choicefield required" id="id_504_plan_0" /> Yes
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_504_plan_1">
+                        <input type="radio" name="504_plan" value="No" required class="choicefield required" id="id_504_plan_1" /> No
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_are_you_a_displaced_homemaker_0">5. Are you a Displaced Homemaker:</label>
+            <ul id="id_are_you_a_displaced_homemaker" class="choicefield required">
+                <li>
+                    <label for="id_are_you_a_displaced_homemaker_0">
+                        <input type="radio" name="are_you_a_displaced_homemaker" value="Yes" required class="choicefield required" id="id_are_you_a_displaced_homemaker_0"
+                        /> Yes
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_are_you_a_displaced_homemaker_1">
+                        <input type="radio" name="are_you_a_displaced_homemaker" value="No" required class="choicefield required" id="id_are_you_a_displaced_homemaker_1"
+                        /> No
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_low_incomepublic_assistance_have_you_or_your_family_received_within_the_last_6_months">6. Have you or your family received TANF, within the last 6 months:</label>
+            <input type="number" name="low_incomepublic_assistance_have_you_or_your_family_received_within_the_last_6_months" required
+                placeholder="If Yes, Enter Monthly Amount. If NO, Enter N/A" class="floatfield required" id="id_low_incomepublic_assistance_have_you_or_your_family_received_within_the_last_6_months"
+            />
+        </p>
+        <p>
+            <label for="id_have_you_or_your_family_received_food_stamp_within_the_last_6_months">7. Have you or your family received Food Stamp, within the last 6 months:</label>
+            <input type="number" name="have_you_or_your_family_received_food_stamp_within_the_last_6_months" required placeholder="If Yes, Enter Monthly Amount. If NO, Enter N/A"
+                class="floatfield required" id="id_have_you_or_your_family_received_food_stamp_within_the_last_6_months" />
+        </p>
+        <p>
+            <label for="id_have_you_or_your_family_received_refugee_assistance_within_the_last_6_months">8. Have you or your family received Refugee Assistance, within the last 6 months:</label>
+            <input type="number" name="have_you_or_your_family_received_refugee_assistance_within_the_last_6_months" required placeholder="If Yes, Enter Monthly Amount. If NO, Enter N/A"
+                class="floatfield required" id="id_have_you_or_your_family_received_refugee_assistance_within_the_last_6_months"
+            />
+        </p>
+        <p>
+            <label for="id_have_you_or_your_family_received_supplemental_security_income_within_the_last_6_months">9. Have you or your family received Supplemental Security Income, within the last 6 months:</label>
+            <input type="number" name="have_you_or_your_family_received_supplemental_security_income_within_the_last_6_months" required
+                placeholder="If Yes, Enter Monthly Amount. If NO, Enter N/A" class="floatfield required" id="id_have_you_or_your_family_received_supplemental_security_income_within_the_last_6_months"
+            />
+        </p>
+        <p>
+            <label for="id_have_you_or_your_family_received_supplemental_social_security_disability_insurance_within_the_last_6_months">10. Have you or your family received Supplemental Social Security Disability Insurance, within the last 6 months:</label>
+            <input type="number" name="have_you_or_your_family_received_supplemental_social_security_disability_insurance_within_the_last_6_months"
+                required placeholder="If Yes, Enter Monthly Amount. If NO, Enter N/A" class="floatfield required" id="id_have_you_or_your_family_received_supplemental_social_security_disability_insurance_within_the_last_6_months"
+            />
+        </p>
+        <p>
+            <label for="id_family_size">11. Family Size:</label>
+            <input type="number" name="family_size" required class="floatfield required" id="id_family_size" />
+        </p>
+        <p>
+            <label for="id_total_gross_annualized_family_income">12. Total GROSS Annualized Family Income ($):</label>
+            <input type="number" name="total_gross_annualized_family_income" required placeholder="Please Enter proximately" class="floatfield required"
+                id="id_total_gross_annualized_family_income" />
+        </p>
+        <p>
+            <label for="id_are_you_homeless_0">13. Are you Homeless:</label>
+            <ul id="id_are_you_homeless" class="choicefield required">
+                <li>
+                    <label for="id_are_you_homeless_0">
+                        <input type="radio" name="are_you_homeless" value="Yes" required class="choicefield required" id="id_are_you_homeless_0"
+                        /> Yes
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_are_you_homeless_1">
+                        <input type="radio" name="are_you_homeless" value="No" required class="choicefield required" id="id_are_you_homeless_1" /> No
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_ou_or_your_child_eligiblereceive_freereduced_lunch">14. You or Your Child eligible/receive free/reduced lunch:</label>
+            <select name="ou_or_your_child_eligiblereceive_freereduced_lunch" required="required" class="choicefield required" id="id_ou_or_your_child_eligiblereceive_freereduced_lunch">
+                <option value="Yes">Yes</option>
+
+                <option value="No" selected>No</option>
+
+                <option value="N/A">N/A</option>
+
+            </select>
+        </p>
+        <p>
+            <label for="id_foster_childaged_outout_of_home_placement">15. Foster Child/Aged Out/Out of Home Placement:</label>
+            <select name="foster_childaged_outout_of_home_placement" required="required" class="choicefield required" id="id_foster_childaged_outout_of_home_placement">
+                <option value="Yes">Yes</option>
+
+                <option value="No" selected>No</option>
+
+                <option value="N/A">N/A</option>
+
+            </select>
+        </p>
+        <p>
+            <label for="id_runaway_youth">16. Runaway Youth:</label>
+            <select name="runaway_youth" required="required" class="choicefield required" id="id_runaway_youth">
+                <option value="Yes">Yes</option>
+
+                <option value="No" selected>No</option>
+
+                <option value="N/A">N/A</option>
+
+            </select>
+        </p>
+        <p>
+            <label for="id_youth_lives_in_a_high_poverty_area">17. Youth lives in a High‐Poverty area:</label>
+            <select name="youth_lives_in_a_high_poverty_area" required="required" class="choicefield required" id="id_youth_lives_in_a_high_poverty_area">
+                <option value="Yes">Yes</option>
+
+                <option value="No" selected>No</option>
+
+                <option value="N/A">N/A</option>
+
+            </select>
+        </p>
+        <p>
+            <label for="id_ex_offender_0">18. Ex‐Offender:</label>
+            <ul id="id_ex_offender" class="choicefield required">
+                <li>
+                    <label for="id_ex_offender_0">
+                        <input type="radio" name="ex_offender" value="Yes" required class="choicefield required" id="id_ex_offender_0" /> Yes
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_ex_offender_1">
+                        <input type="radio" name="ex_offender" value="No" required class="choicefield required" id="id_ex_offender_1" /> No
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_english_language_learner_0">19. English Language Learner:</label>
+            <span class="helptext">(Participant has limited ability in speaking, reading, writing or understanding English and native
+                language is not English or another language is dominant in the home.)</span>
+            <ul id="id_english_language_learner" class="choicefield required">
+                <li>
+                    <label for="id_english_language_learner_0">
+                        <input type="radio" name="english_language_learner" value="Yes" required class="choicefield required" id="id_english_language_learner_0"
+                        /> Yes
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_english_language_learner_1">
+                        <input type="radio" name="english_language_learner" value="No" required class="choicefield required" id="id_english_language_learner_1"
+                        /> No
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_youth_who_computes_or_solves_problems_reads_writes_or_speaks_english_at_or_below_8th_grade_level_0">20. Youth who computes or solves problems, reads, writes, or speaks English at or below 8th grade level:</label>
+            <ul id="id_youth_who_computes_or_solves_problems_reads_writes_or_speaks_english_at_or_below_8th_grade_level" class="choicefield required">
+                <li>
+                    <label for="id_youth_who_computes_or_solves_problems_reads_writes_or_speaks_english_at_or_below_8th_grade_level_0">
+                        <input type="radio" name="youth_who_computes_or_solves_problems_reads_writes_or_speaks_english_at_or_below_8th_grade_level"
+                            value="Yes" required class="choicefield required" id="id_youth_who_computes_or_solves_problems_reads_writes_or_speaks_english_at_or_below_8th_grade_level_0"
+                        /> Yes
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_youth_who_computes_or_solves_problems_reads_writes_or_speaks_english_at_or_below_8th_grade_level_1">
+                        <input type="radio" name="youth_who_computes_or_solves_problems_reads_writes_or_speaks_english_at_or_below_8th_grade_level"
+                            value="No" required class="choicefield required" id="id_youth_who_computes_or_solves_problems_reads_writes_or_speaks_english_at_or_below_8th_grade_level_1"
+                        /> No
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_youth_or_adult_who_is_unable_to_compute_or_solve_problems_read_write_or_speak_english_well_enough_to_function_on_a_job_in_the_individuals_family_or_in_society_0">21. Youth or Adult who is unable to compute or solve problems, read, write, or speak English well enough to function
+                on a job, in the individual’s family, or in society:</label>
+            <ul id="id_youth_or_adult_who_is_unable_to_compute_or_solve_problems_read_write_or_speak_english_well_enough_to_function_on_a_job_in_the_individuals_family_or_in_society"
+                class="choicefield required">
+                <li>
+                    <label for="id_youth_or_adult_who_is_unable_to_compute_or_solve_problems_read_write_or_speak_english_well_enough_to_function_on_a_job_in_the_individuals_family_or_in_society_0">
+                        <input type="radio" name="youth_or_adult_who_is_unable_to_compute_or_solve_problems_read_write_or_speak_english_well_enough_to_function_on_a_job_in_the_individuals_family_or_in_society"
+                            value="Yes" required class="choicefield required" id="id_youth_or_adult_who_is_unable_to_compute_or_solve_problems_read_write_or_speak_english_well_enough_to_function_on_a_job_in_the_individuals_family_or_in_society_0"
+                        /> Yes
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_youth_or_adult_who_is_unable_to_compute_or_solve_problems_read_write_or_speak_english_well_enough_to_function_on_a_job_in_the_individuals_family_or_in_society_1">
+                        <input type="radio" name="youth_or_adult_who_is_unable_to_compute_or_solve_problems_read_write_or_speak_english_well_enough_to_function_on_a_job_in_the_individuals_family_or_in_society"
+                            value="No" required class="choicefield required" id="id_youth_or_adult_who_is_unable_to_compute_or_solve_problems_read_write_or_speak_english_well_enough_to_function_on_a_job_in_the_individuals_family_or_in_society_1"
+                        /> No
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_migrantseasonal_farm_workers_0">22. Migrant/Seasonal Farm Workers:</label>
+            <ul id="id_migrantseasonal_farm_workers" class="choicefield required">
+                <li>
+                    <label for="id_migrantseasonal_farm_workers_0">
+                        <input type="radio" name="migrantseasonal_farm_workers" value="Yes" required class="choicefield required" id="id_migrantseasonal_farm_workers_0"
+                        /> Yes
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_migrantseasonal_farm_workers_1">
+                        <input type="radio" name="migrantseasonal_farm_workers" value="No" required class="choicefield required" id="id_migrantseasonal_farm_workers_1"
+                        /> No
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_within_two_years_of_exhausting_tanf_lifetime_eligibility_0">23. Within two years of exhausting TANF lifetime eligibility:</label>
+            <ul id="id_within_two_years_of_exhausting_tanf_lifetime_eligibility" class="choicefield required">
+                <li>
+                    <label for="id_within_two_years_of_exhausting_tanf_lifetime_eligibility_0">
+                        <input type="radio" name="within_two_years_of_exhausting_tanf_lifetime_eligibility" value="Yes" required class="choicefield required"
+                            id="id_within_two_years_of_exhausting_tanf_lifetime_eligibility_0" /> Yes
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_within_two_years_of_exhausting_tanf_lifetime_eligibility_1">
+                        <input type="radio" name="within_two_years_of_exhausting_tanf_lifetime_eligibility" value="No" required class="choicefield required"
+                            id="id_within_two_years_of_exhausting_tanf_lifetime_eligibility_1" /> No
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_single_parent_0">24. Single Parent:</label>
+            <ul id="id_single_parent" class="choicefield required">
+                <li>
+                    <label for="id_single_parent_0">
+                        <input type="radio" name="single_parent" value="Yes" required class="choicefield required" id="id_single_parent_0" /> Yes
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_single_parent_1">
+                        <input type="radio" name="single_parent" value="No" required class="choicefield required" id="id_single_parent_1" /> No
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_single_pregnant_woman_0">25. Single Pregnant Woman:</label>
+            <ul id="id_single_pregnant_woman" class="choicefield required">
+                <li>
+                    <label for="id_single_pregnant_woman_0">
+                        <input type="radio" name="single_pregnant_woman" value="Yes" required class="choicefield required" id="id_single_pregnant_woman_0"
+                        /> Yes
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_single_pregnant_woman_1">
+                        <input type="radio" name="single_pregnant_woman" value="No" required class="choicefield required" id="id_single_pregnant_woman_1"
+                        /> No
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_long_term_unemployed_unemployed_27_or_more_consecutive_weeks_0">26. Long‐Term Unemployed (Unemployed 27 or more consecutive weeks):</label>
+            <ul id="id_long_term_unemployed_unemployed_27_or_more_consecutive_weeks" class="choicefield required">
+                <li>
+                    <label for="id_long_term_unemployed_unemployed_27_or_more_consecutive_weeks_0">
+                        <input type="radio" name="long_term_unemployed_unemployed_27_or_more_consecutive_weeks" value="Yes" required class="choicefield required"
+                            id="id_long_term_unemployed_unemployed_27_or_more_consecutive_weeks_0" /> Yes
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_long_term_unemployed_unemployed_27_or_more_consecutive_weeks_1">
+                        <input type="radio" name="long_term_unemployed_unemployed_27_or_more_consecutive_weeks" value="No" required class="choicefield required"
+                            id="id_long_term_unemployed_unemployed_27_or_more_consecutive_weeks_1" /> No
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_cultural_barriers_0">27. Cultural Barriers:</label>
+            <ul id="id_cultural_barriers" class="choicefield required">
+                <li>
+                    <label for="id_cultural_barriers_0">
+                        <input type="radio" name="cultural_barriers" value="Yes" required class="choicefield required" id="id_cultural_barriers_0"
+                        /> Yes
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_cultural_barriers_1">
+                        <input type="radio" name="cultural_barriers" value="No" required class="choicefield required" id="id_cultural_barriers_1"
+                        /> No
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_current_school_status">28. Current School Status:</label>
+            <select name="current_school_status" required="required" class="choicefield required" id="id_current_school_status">
+                <option value="In School(HS or Less)" selected>In School(HS or Less)</option>
+
+                <option value="In School(Post HS)">In School(Post HS)</option>
+
+                <option value="Not Attending School(HS Grad)">Not Attending School(HS Grad)</option>
+
+                <option value="Not Attending School(HS Drop Out)">Not Attending School(HS Drop Out)</option>
+
+            </select>
+        </p>
+        <input type="hidden" name="userid" value="{{ request.user.id }}" required="required" class="charfield required" id="id_userid" /><input type="hidden" name="username" value="{{ request.user.username }}" required="required" class="charfield required" id="id_username" /></p>
+        <div style="clear:left;">&nbsp;</div>
+        <input type="submit" value="Submit">
+        {% csrf_token %}
+    </form>
+
+</body>
+
+
+{% endblock %}

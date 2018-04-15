@@ -1,0 +1,296 @@
+{% extends "applicationBase.html" %} {% block content %}
+
+<head>
+    <meta charset="utf-8">
+    <title>Military Section</title>
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            padding: 1em 2em;
+            color: black;
+        }
+
+        p {
+            width: 50em;
+            clear: both;
+        }
+
+        label {
+            font-size: 20px;
+            font-family: 'Raleway', sans-serif;
+            display: block;
+            float: left;
+            margin: 0 1.2em 1.2em 0;
+            color: black;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        li label {
+            width: auto;
+            cursor: pointer;
+        }
+
+        .errorlist {
+            color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Military Section</h1>
+
+    <p>If you served in the US Military, please complete this section.</p> Priority of Service (POS) is extended to eligible
+    Veterans* and covered spouses** to receive preference for all Workforce Development services offered through PA CareerLink®,
+    including resources in our Career Resource Center. POS customers, regardless of when they apply for a limited resource,
+    will be moved to the top of the list ahead of non‐POS customers for the available resource or program. CUSTOMERS MAY
+    BE ELIGIBLE FOR PRIORITY OF SERVICE IF:
+    <br> 1. *They served on active duty for at least 180 days (after training; or were medically discharged during training)
+    in the United States military (Army, Navy, Marines, Air Force, Coast Guard) or were activated and received a campaign
+    badge as a member of a National Guard or Reserve unit and were not dishonorably discharged; or
+    <br> 2. **They are the spouse of a veteran who is a Prisoner of War, Missing in Action, is 100% Disabled or has died from
+    a service‐related disability</p>
+
+
+    <form action="/forms/military-section/" method="post">
+        <input type='hidden' name='csrfmiddlewaretoken' value='xpfEiX6QLp8wNLjlbppmCqiJgmwjG32sFuntBSdrpOMPp4edqdFXjouHApLEgCHc'
+        />
+        <p>
+            <label for="id_1_are_you_currently_on_active_duty_0">1. Are you currently on Active Duty?</label>
+            <ul id="id_1_are_you_currently_on_active_duty" class="choicefield required">
+                <li>
+                    <label for="id_1_are_you_currently_on_active_duty_0">
+                        <input type="radio" name="1_are_you_currently_on_active_duty" value="YES" required class="choicefield required"
+                            id="id_1_are_you_currently_on_active_duty_0" /> YES
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_1_are_you_currently_on_active_duty_1">
+                        <input type="radio" name="1_are_you_currently_on_active_duty" value="NO" required class="choicefield required"
+                            id="id_1_are_you_currently_on_active_duty_1" /> NO
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_2_are_you_a_veteran_as_defined_above_0">2. Are you a Veteran as defined above?</label>
+            <ul id="id_2_are_you_a_veteran_as_defined_above" class="choicefield required">
+                <li>
+                    <label for="id_2_are_you_a_veteran_as_defined_above_0">
+                        <input type="radio" name="2_are_you_a_veteran_as_defined_above" value="YES" required class="choicefield required"
+                            id="id_2_are_you_a_veteran_as_defined_above_0" /> YES
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_2_are_you_a_veteran_as_defined_above_1">
+                        <input type="radio" name="2_are_you_a_veteran_as_defined_above" value="NO" required class="choicefield required"
+                            id="id_2_are_you_a_veteran_as_defined_above_1" /> NO
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_3_if_yes_do_you_have_a_service_related_disability_0">3. If yes, do you have a service‐ related disability?</label>
+            <ul id="id_3_if_yes_do_you_have_a_service_related_disability"
+                class="choicefield required">
+                <li>
+                    <label for="id_3_if_yes_do_you_have_a_service_related_disability_0">
+                        <input type="radio" name="3_if_yes_do_you_have_a_service_related_disability" value="YES" required class="choicefield required"
+                            id="id_3_if_yes_do_you_have_a_service_related_disability_0" /> YES
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_3_if_yes_do_you_have_a_service_related_disability_1">
+                        <input type="radio" name="3_if_yes_do_you_have_a_service_related_disability" value="NO" required class="choicefield required"
+                            id="id_3_if_yes_do_you_have_a_service_related_disability_1" /> NO
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_3_if_yes_how_many_percents">3. If yes, how many percents?</label>
+            <input type="number" name="3_if_yes_how_many_percents" required class="floatfield required"
+                id="id_3_if_yes_how_many_percents" />
+        </p>
+        <p>
+            <label for="id_4_are_you_the_spouse_of_a_veteran_as_defined_above_0">4. Are you the Spouse of a veteran as defined above?</label>
+            <ul id="id_4_are_you_the_spouse_of_a_veteran_as_defined_above"
+                class="choicefield required">
+                <li>
+                    <label for="id_4_are_you_the_spouse_of_a_veteran_as_defined_above_0">
+                        <input type="radio" name="4_are_you_the_spouse_of_a_veteran_as_defined_above" value="YES" required class="choicefield required"
+                            id="id_4_are_you_the_spouse_of_a_veteran_as_defined_above_0" /> YES
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_4_are_you_the_spouse_of_a_veteran_as_defined_above_1">
+                        <input type="radio" name="4_are_you_the_spouse_of_a_veteran_as_defined_above" value="NO" required class="choicefield required"
+                            id="id_4_are_you_the_spouse_of_a_veteran_as_defined_above_1" /> NO
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_entry_date">5. Entry Date:</label>
+            <input type="date" name="entry_date" required class="datefield required" id="id_entry_date"
+            />
+            <span class="helptext">(VETERANS ONLY)</span>
+        </p>
+        <p>
+            <label for="id_anticipated_separation_date">6. (Anticipated) Separation Date:</label>
+            <input type="date" name="anticipated_separation_date" required class="datefield required"
+                id="id_anticipated_separation_date" />
+            <span class="helptext">(VETERANS ONLY)</span>
+        </p>
+        <p>
+            <label>7. Type of Discharge (check all that apply):</label>
+            <ul id="id_type_of_discharge_check_all_that_apply" class="multiplechoicefield required">
+                <li>
+                    <label for="id_type_of_discharge_check_all_that_apply_0">
+                        <input type="checkbox" name="type_of_discharge_check_all_that_apply" value="Honorable"
+                            class="multiplechoicefield required" id="id_type_of_discharge_check_all_that_apply_0" /> Honorable
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_type_of_discharge_check_all_that_apply_1">
+                        <input type="checkbox" name="type_of_discharge_check_all_that_apply" value="Dishonorable"
+                            class="multiplechoicefield required" id="id_type_of_discharge_check_all_that_apply_1" /> Dishonorable
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_type_of_discharge_check_all_that_apply_2">
+                        <input type="checkbox" name="type_of_discharge_check_all_that_apply" value="Medical"
+                            class="multiplechoicefield required" id="id_type_of_discharge_check_all_that_apply_2" /> Medical
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_type_of_discharge_check_all_that_apply_3">
+                        <input type="checkbox" name="type_of_discharge_check_all_that_apply" value="Other"
+                            class="multiplechoicefield required" id="id_type_of_discharge_check_all_that_apply_3" /> Other
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_were_you_awarded_a_campaign_badgeexpeditionary_medal_or_armed_forces_medal_0">8. Were you awarded a Campaign Badge/Expeditionary Medal or Armed Forces Medal?</label>
+            <ul id="id_were_you_awarded_a_campaign_badgeexpeditionary_medal_or_armed_forces_medal"
+                class="choicefield required">
+                <li>
+                    <label for="id_were_you_awarded_a_campaign_badgeexpeditionary_medal_or_armed_forces_medal_0">
+                        <input type="radio" name="were_you_awarded_a_campaign_badgeexpeditionary_medal_or_armed_forces_medal"
+                            value="YES" required class="choicefield required" id="id_were_you_awarded_a_campaign_badgeexpeditionary_medal_or_armed_forces_medal_0"
+                        /> YES
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_were_you_awarded_a_campaign_badgeexpeditionary_medal_or_armed_forces_medal_1">
+                        <input type="radio" name="were_you_awarded_a_campaign_badgeexpeditionary_medal_or_armed_forces_medal"
+                            value="NO" required class="choicefield required" id="id_were_you_awarded_a_campaign_badgeexpeditionary_medal_or_armed_forces_medal_1"
+                        /> NO
+                    </label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label>9. Your Branch of Service: (check all that apply):</label>
+            <ul id="id_your_branch_of_service_check_all_that_apply"
+                class="multiplechoicefield required">
+                <li>
+                    <label for="id_your_branch_of_service_check_all_that_apply_0">
+                        <input type="checkbox" name="your_branch_of_service_check_all_that_apply" value="Army"
+                            class="multiplechoicefield required" id="id_your_branch_of_service_check_all_that_apply_0" /> Army
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_your_branch_of_service_check_all_that_apply_1">
+                        <input type="checkbox" name="your_branch_of_service_check_all_that_apply" value="Army Reserves"
+                            class="multiplechoicefield required" id="id_your_branch_of_service_check_all_that_apply_1" /> Army Reserves</label>
+
+                </li>
+                <li>
+                    <label for="id_your_branch_of_service_check_all_that_apply_2">
+                        <input type="checkbox" name="your_branch_of_service_check_all_that_apply" value="Navy"
+                            class="multiplechoicefield required" id="id_your_branch_of_service_check_all_that_apply_2" /> Navy
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_your_branch_of_service_check_all_that_apply_3">
+                        <input type="checkbox" name="your_branch_of_service_check_all_that_apply" value="Navy Reserves"
+                            class="multiplechoicefield required" id="id_your_branch_of_service_check_all_that_apply_3" /> Navy Reserves</label>
+
+                </li>
+                <li>
+                    <label for="id_your_branch_of_service_check_all_that_apply_4">
+                        <input type="checkbox" name="your_branch_of_service_check_all_that_apply" value="Air Force"
+                            class="multiplechoicefield required" id="id_your_branch_of_service_check_all_that_apply_4" /> Air Force</label>
+
+                </li>
+                <li>
+                    <label for="id_your_branch_of_service_check_all_that_apply_5">
+                        <input type="checkbox" name="your_branch_of_service_check_all_that_apply" value="Air Force Reserves"
+                            class="multiplechoicefield required" id="id_your_branch_of_service_check_all_that_apply_5"
+                        /> Air Force Reserves</label>
+
+                </li>
+                <li>
+                    <label for="id_your_branch_of_service_check_all_that_apply_6">
+                        <input type="checkbox" name="your_branch_of_service_check_all_that_apply" value="Marines"
+                            class="multiplechoicefield required" id="id_your_branch_of_service_check_all_that_apply_6" /> Marines
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_your_branch_of_service_check_all_that_apply_7">
+                        <input type="checkbox" name="your_branch_of_service_check_all_that_apply" value="Marine Reserves"
+                            class="multiplechoicefield required" id="id_your_branch_of_service_check_all_that_apply_7" /> Marine Reserves</label>
+
+                </li>
+                <li>
+                    <label for="id_your_branch_of_service_check_all_that_apply_8">
+                        <input type="checkbox" name="your_branch_of_service_check_all_that_apply" value="Coast Guard"
+                            class="multiplechoicefield required" id="id_your_branch_of_service_check_all_that_apply_8" /> Coast Guard</label>
+
+                </li>
+                <li>
+                    <label for="id_your_branch_of_service_check_all_that_apply_9">
+                        <input type="checkbox" name="your_branch_of_service_check_all_that_apply" value="Coast Guard Reserves"
+                            class="multiplechoicefield required" id="id_your_branch_of_service_check_all_that_apply_9"
+                        /> Coast Guard Reserves</label>
+
+                </li>
+                <li>
+                    <label for="id_your_branch_of_service_check_all_that_apply_10">
+                        <input type="checkbox" name="your_branch_of_service_check_all_that_apply" value="National Guard"
+                            class="multiplechoicefield required" id="id_your_branch_of_service_check_all_that_apply_10" /> National Guard</label>
+
+                </li>
+            </ul>
+            <input type="hidden" name="userid" value="{{ request.user.id }}" required="required" class="charfield required" id="id_userid" />
+            <input type="hidden" name="username" value="{{ request.user.username }}" required="required" class="charfield required" id="id_username"/>
+        </p>
+        <div style="clear:left;">&nbsp;</div>
+        <input type="submit" value="Submit">
+        {% csrf_token %}
+    </form>
+
+</body>
+
+{% endblock %}

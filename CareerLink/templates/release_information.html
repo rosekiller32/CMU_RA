@@ -1,0 +1,76 @@
+{% extends "applicationBase.html" %} {% block content %}
+
+<head>
+    <meta charset="utf-8">
+    <title>AUTHORIZATION OF RELEASE OF INFORMATION</title>
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            padding: 1em 2em;
+            color: black;
+        }
+
+        p {
+            width: 50em;
+            clear: both;
+        }
+
+        label {
+            font-size: 20px;
+            font-family: 'Raleway', sans-serif;
+            display: block;
+            float: left;
+            margin: 0 1.2em 1.2em 0;
+            color: black;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        li label {
+            width: auto;
+            cursor: pointer;
+        }
+
+        .errorlist {
+            color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>AUTHORIZATION OF RELEASE OF INFORMATION</h1>
+
+    <p>I give my permission to release any information necessary for the determination of my eligibility for the Workforce Innovation
+        Opportunity Act (WIOA) Program. I also give permission to release to the agencies that are designated as Partners
+        in the PA CareerLink® System any information necessary for collaboration of services provided to me. I also give
+        permission to my employer to release any employment information that may be necessary during my follow‐up period
+        with the PA CareerLink® Center. All information I authorize to be obtained/released from these agencies will be held
+        strictly confidential and cannot be released by the recipient without written consent. I understand that this authorization
+        will remain in effect for the period necessary to complete all transactions related to the services provided to me.
+        I understand that unless otherwise limited by state of federal regulation and except to the extent that action has
+        been taken which was based on my consent, I may withdraw this consent at any time. I have read and understand the
+        above Authorization of Release of Information statement and acknowledge so with my signature below.</p>
+
+
+    <form action="/forms/authorization-of-release-of-information/" method="post">
+        <input type='hidden' name='csrfmiddlewaretoken' value='AYGGn2SG70aMmvBEshQkBNZ7X8HPAEoyI3OvGXZhLpO5YOwwH56ViLb5hbWaad3i'
+        />
+        <p>
+            <label for="id_signature_of_participantapplicant">Signature of Participant/Applicant:</label>
+            <input type="text" name="signature_of_participantapplicant" id="id_signature_of_participantapplicant" required class="charfield required"
+                maxlength="2000" />
+        </p>
+        <p>
+            <label for="id_date">Date:</label>
+            <input type="date" name="date" required class="datefield required" id="id_date" />
+            <input type="hidden" name="userid" value="{{ request.user.id }}" required="required" class="charfield required" id="id_userid" />
+            <input type="hidden" name="username" value="{{ request.user.username }}" required="required" class="charfield required" id="id_username"/>
+        
+        </p>
+        <div style="clear:left;">&nbsp;</div>
+        <input type="submit" value="Submit"> {% csrf_token %}
+    </form>
+</body>
+{% endblock %}

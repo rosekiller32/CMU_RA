@@ -1,0 +1,11 @@
+{% extends "applicationBase.html" %} {% block content %}
+<form>
+    <table class="apForm" style="background-color:khaki;">
+        {{form}}
+    </table>
+    
+    <input type="submit" class="log-btn" value="Next Step">
+    <input type="submit" class="log-btn" value="Save">
+    {% csrf_token %}
+</form>
+{% endblock %}

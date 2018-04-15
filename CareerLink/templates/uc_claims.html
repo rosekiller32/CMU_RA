@@ -1,0 +1,107 @@
+{% extends "applicationBase.html" %} {% block content %}
+
+<head>
+    <meta charset="utf-8">
+    <title>REQUEST FOR RELEASE OF UC CLAIMS INFORMATION</title>
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            padding: 1em 2em;
+            color: black;
+        }
+
+        p {
+            width: 50em;
+            clear: both;
+        }
+
+        label {
+            font-size: 20px;
+            font-family: 'Raleway', sans-serif;
+            display: block;
+            float: left;
+            margin: 0 1.2em 1.2em 0;
+            color: black;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        li label {
+            width: auto;
+            cursor: pointer;
+        }
+
+        .errorlist {
+            color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>REQUEST FOR RELEASE OF UC CLAIMS INFORMATION</h1>
+
+    <p>Consent to Release Information: By signing this document, I hereby give the PA CareerLink® permission to obtain necessary
+        unemployment compensation information from the PA Unemployment Compensation Program in order to determine my eligibility
+        for the program(s) sought above.</p>
+
+
+    <form action="/forms/request-for-release-of-uc-claims-information/" method="post">
+        <input type='hidden' name='csrfmiddlewaretoken' value='LK8HJkM1cnZ7q4wvfLo5792jE8GH2m9ITPgw2fTCQMDq2nrnuzEGO7ehYbV2CVOs'
+        />
+        <p>
+            <label>Indicate the program being sought:</label>
+            <ul id="id_indicate_the_program_being_sought" class="multiplechoicefield required">
+                <li>
+                    <label for="id_indicate_the_program_being_sought_0">
+                        <input type="checkbox" name="indicate_the_program_being_sought" value="Dislocated Worker" class="multiplechoicefield required"
+                            id="id_indicate_the_program_being_sought_0" /> Dislocated Worker</label>
+
+                </li>
+                <li>
+                    <label for="id_indicate_the_program_being_sought_1">
+                        <input type="checkbox" name="indicate_the_program_being_sought" value="Trade Adjustment Assistance" class="multiplechoicefield required"
+                            id="id_indicate_the_program_being_sought_1" /> Trade Adjustment Assistance</label>
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            <label for="id_claimants_full_name_print">Claimant’s Full Name (print):</label>
+            <input type="text" name="claimants_full_name_print" id="id_claimants_full_name_print" required class="charfield required"
+                maxlength="2000" />
+        </p>
+        <p>
+            <label for="id_social_security_number">Social Security Number:</label>
+            <input type="number" name="social_security_number" required class="floatfield required" id="id_social_security_number" />
+        </p>
+        <p>
+            <label for="id_date_of_request">Date of Request:</label>
+            <input type="date" name="date_of_request" required class="datefield required" id="id_date_of_request" />
+        </p>
+        <p>
+            <label for="id_claimants_signature">Claimant’s Signature:</label>
+            <input type="text" name="claimants_signature" id="id_claimants_signature" required class="charfield required" maxlength="2000"
+            />
+        </p>
+        <p>
+            <label for="id_date">Date:</label>
+            <input type="date" name="date" required class="datefield required" id="id_date" />
+        </p>
+        <p>
+            <label for="id_claimants_name_print">Claimant’s Name (Print):</label>
+            <input type="text" name="claimants_name_print" id="id_claimants_name_print" required class="charfield required" maxlength="2000"
+            />
+        </p>
+        <p>
+            <input type="hidden" name="userid" value="{{ request.user.id }}" required="required" class="charfield required" id="id_userid"
+            />
+            <input type="hidden" name="username" value="{{ request.user.username }}" required="required" class="charfield required" id="id_username"
+            />
+        </p>
+        <div style="clear:left;">&nbsp;</div>
+        <input type="submit" value="Submit"> {% csrf_token %}
+    </form>
+</body>
+{% endblock %}

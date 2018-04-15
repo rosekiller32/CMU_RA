@@ -1,0 +1,103 @@
+{% extends "applicationBase.html" %} {% block content %}
+
+<head>
+    <meta charset="utf-8">
+    <title>ailure to Register for Selective Service Appeal</title>
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            padding: 1em 2em;
+            color: black;
+        }
+
+        p {
+            width: 50em;
+            clear: both;
+        }
+
+        label {
+            font-size: 20px;
+            font-family: 'Raleway', sans-serif;
+            display: block;
+            float: left;
+            margin: 0 1.2em 1.2em 0;
+            color: black;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        li label {
+            width: auto;
+            cursor: pointer;
+        }
+
+        .errorlist {
+            color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Failure to Register for Selective Service Appeal Form</h1>
+
+    <p>If you are age 26 or older and are not registered for Selective Service, please use this form to explain why you did
+        not register.</p>
+
+
+    <form action="/forms/failure-to-register-for-selective-service-appeal/" method="post">
+        <input type='hidden' name='csrfmiddlewaretoken' value='fJw0NqgUPShMu3uQvImkJCEFom0mDv1lnOEP6lnvthV56mpIKwCVqAQDIpfHd4G5'
+        />
+        <p>
+            <label for="id_1_place_of_birth">1. Place of birth:</label>
+            <input type="text" name="1_place_of_birth" id="id_1_place_of_birth" required class="charfield required"
+                maxlength="2000" />
+        </p>
+        <p>
+            <label for="id_2_places_where_you_lived_from_age_18_through_25">2. Place(s) where you lived from age 18 through 25:</label>
+            <input type="text" name="2_places_where_you_lived_from_age_18_through_25"
+                id="id_2_places_where_you_lived_from_age_18_through_25" required class="charfield required" maxlength="2000"
+            />
+        </p>
+        <p>
+            <label for="id_3_why_did_you_fail_to_register">3. Why did you fail to register?</label>
+            <textarea name="3_why_did_you_fail_to_register" rows="10" maxlength="2000"
+                id="id_3_why_did_you_fail_to_register" required class="charfield required" cols="40">
+</textarea>
+        </p>
+        <p>
+            <label for="id_4_were_you_aware_of_the_widely_publicized_requirement_to_register_when_you_were_age_18_through25_0">4. Were you aware of the widely publicized requirement to register when you were age 18 through 25?</label>
+            <ul
+                id="id_4_were_you_aware_of_the_widely_publicized_requirement_to_register_when_you_were_age_18_through25" class="choicefield required">
+                <li>
+                    <label for="id_4_were_you_aware_of_the_widely_publicized_requirement_to_register_when_you_were_age_18_through25_0">
+                        <input type="radio" name="4_were_you_aware_of_the_widely_publicized_requirement_to_register_when_you_were_age_18_through25"
+                            value="YES" required class="choicefield required" id="id_4_were_you_aware_of_the_widely_publicized_requirement_to_register_when_you_were_age_18_through25_0"
+                        /> YES
+                    </label>
+
+                </li>
+                <li>
+                    <label for="id_4_were_you_aware_of_the_widely_publicized_requirement_to_register_when_you_were_age_18_through25_1">
+                        <input type="radio" name="4_were_you_aware_of_the_widely_publicized_requirement_to_register_when_you_were_age_18_through25"
+                            value="NO" required class="choicefield required" id="id_4_were_you_aware_of_the_widely_publicized_requirement_to_register_when_you_were_age_18_through25_1"
+                        /> NO
+                    </label>
+
+                </li>
+                </ul>
+        </p>
+        <p>
+            <label for="id_a_if_you_were_not_aware_please_explain">a. If you were not aware, please explain:</label>
+            <textarea name="a_if_you_were_not_aware_please_explain" maxlength="2000"
+                id="id_a_if_you_were_not_aware_please_explain" rows="10" class="charfield" cols="40">
+            </textarea>
+            <input type="hidden" name="userid" value="{{ request.user.id }}" required="required" class="charfield required" id="id_userid" />
+            <input type="hidden" name="username" value="{{ request.user.username }}" required="required" class="charfield required" id="id_username"/>
+        </p>
+        <div style="clear:left;">&nbsp;</div>
+        <input type="submit" value="Submit"> {% csrf_token %}
+    </form>
+</body>
+{% endblock %}

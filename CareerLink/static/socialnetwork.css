@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+
+.fieldWrapper {
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    color: #000;
+}
+
+
+.up-side {
+    padding: 0px 0px 90px;
+    background: #9100ff;
+    background-size: cover;
+    width: 48%;
+}
+.box{
+    display: flex;
+    margin-top: 5%;
+    background: white;
+}
+.up-side h1 {
+    font-size: 70px;
+    font-weight: 900;
+    color: #FFF;
+    padding: 50px 10px 00px 26px;
+}
+
+.up-side p{
+
+    font-weight:600;
+	padding:10px 10px 10px 26px;
+}
+
+.down-side h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+    padding: 50px 10px 00px 50px;
+}
+
+.down-side h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    padding: 50px 10px 00px 50px;
+}
+
+.down-side form{
+    font-weight: 600;
+    color: #000;
+    padding: 10px 50px 10px 50px;
+}
+
+form {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 20px 50px 10px 50px;
+}
+
+.form-control {
+    box-shadow: none;
+    border-radius: 0px;
+    border-bottom: 1px solid #9100ff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.log-btn {
+    background: #84d14e;
+    border-radius: 20px;
+    padding: 5px 19px;
+    color: #FFF;
+    font-weight: 600;
+    float: left;
+    margin-top: 30px;
+}
+
+.linkButton {
+    background: none;
+    border: none;
+    color: #0066ff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.list {
+    padding: 10px;
+    width: 95%;
+    border: 2px solid black;
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+    margin: 20px;
+}
+
+
+.post{
+    font-size: 30px;
+    margin-left: 5%;
+    color: aqua;
+}
+
+.comment{
+    color: steelblue;
+    font-size: 30px;
+    margin-left: 8%;
+}
+
+.post_comment{
+    font-size: 30px;
+    margin-left: 120px;
+}
+
+.list input{
+    width:90%;
+    height:100px;
+}
+
+#commemt-button{
+    width:100px;
+    height: 10%;
+    background: #aeda8e;
+    border-radius: 20px;
+    padding: 5px 19px;
+    color: #FFF;
+    font-weight: 600;
+    margin-left:85%;
+}
+
+.dropbtn {
+    background-color: #9100ff;
+    color: white;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left:3%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: plum;
+}
+
+.photo-circular{
+    display:block;
+    margin:0 auto;
+    width:200px;
+    height:200px;
+    border-radius:50%;
+}
+
+
+#text{
+    height: 300px;
+    display:block;
+    margin:0 auto;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    width:75%;
+    text-align: inherit;
+    border: 2px solid #9100ff;
+    padding: 3%;
+    line-height: 35px;
+    font-weight: 700;
+    text-align: start;
+}
+.topProfile{
+    margin-top: 7%;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 7%;
+    display: flex;
+    line-height: 40px;
+    font-size: 50px;
+}
+#proImg{
+    width: 200px;
+    height: 200px;
+}
+
+#proInfo{
+    color:#9100ff;
+    width: 60%;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#passwordWarn{
+    color:red;
+}
+
+#ifYes{
+    visibility:hidden;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+}
+.profile-title{
+    font-size: 30px;
+    color: #9100ff;
+    margin-left: 10%;
+    font-weight: 700;
+}
+
+.title-content{
+    color: black
+}
+
+.profile-btitle{
+    font-size: 40px;
+    color: black;
+    margin-left: 35%;
+}
+
+.profile-btitle-2{
+    font-size: 40px;
+    color: black;
+    margin-left: 40%;
+}
+
+#bio-button{
+    width:100px;
+    height: 10%;
+    background: #aeda8e;
+    border-radius: 20px;
+    padding: 5px 19px;
+    color: #FFF;
+    font-weight: 600;
+    margin-left:85%;
+    margin-top: 3px;
+}
+
+*{
+    widows: 95%;
+}
+
+.newpostout {
+    padding: 10px;
+    width: 95%;
+    border: 2px solid black;
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+    margin: 20px;
+}
+
+.textfield{
+    width:90%;
+    height:100px;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #d9d9d9;
+}
+
+.subtitle {
+    color: yellow;
+    font-size: 25px;
+}
+
+
+#military_article{
+    border: 1px solid black;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 20%;
+}
+
+
+#ifYes_veteran{
+    visibility:hidden;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+}
+
+
+#container{
+    display: flex;
+}
+
+.application{
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 100px;
+}
